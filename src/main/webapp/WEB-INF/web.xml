@@ -7,12 +7,23 @@
   
 <servlet>
 <servlet-name>my_first_servlet</servlet-name>
-<servlet-class>com.prowings.MyFirstServlet</servlet-class>
+<servlet-class>com.prowings.service.MyFirstServlet</servlet-class>
 </servlet>  
+
+<servlet>
+<servlet-name>student_servlet</servlet-name>
+<servlet-class>com.prowings.service.StudentServlet</servlet-class>
+</servlet>  
+
   
 <servlet-mapping>
 <servlet-name>my_first_servlet</servlet-name>
 <url-pattern>/hello</url-pattern>
+</servlet-mapping> 
+
+<servlet-mapping>
+<servlet-name>student_servlet</servlet-name>
+<url-pattern>/SaveStudent</url-pattern>
 </servlet-mapping> 
   
 </web-app>
