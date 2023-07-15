@@ -1,8 +1,11 @@
 <!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Addition of GeekUsers</title>
+<title>Add New Student</title>
    
 <!-- Section used as css styling for table --> 
 <style>
@@ -68,6 +71,7 @@
 </form>
  
 <br/>
+<h1><%= request.getParameter("name") %></h1>
 <a href="ViewStudents">view Students</a>
  
 </body>

@@ -1,7 +1,9 @@
 package com.prowings.service;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,7 +28,19 @@ public class StudentServlet extends HttpServlet{
 		std.setCourse(req.getParameter("course"));
 		std.setAddress(req.getParameter("address"));
 		
-		stdDao.saveStudent(std);
+		Student savedStudent = stdDao.saveStudent(std);
+		
+//		req.getSession().setAttribute("message","Student Saved successfully!!!");
+//		req.getRequestDispatcher("index.jsp").forward(req, resp);
+
+		resp.sendRedirect( "index.jsp?name=Saved to DB!!!" );
+		
+        
+//        PrintWriter pw=resp.getWriter();//get the stream to write the data  
+//		//writing html in the stream  
+//		pw.println("<html><body>");  
+//		pw.println("Student saved successfully!!!");  
+//		pw.println("</body></html>");  
 	}
 
 	
